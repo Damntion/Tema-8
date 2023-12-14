@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.ico">
+    <title>Document</title>
+    <style>
+        .slide-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .slide {
+            display: none;
+            text-align: center;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        .text {
+            position: absolute;
+            top: 20px; 
+            left: 17%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            animation-duration: 7s;
+            animation-name: slidein;
+        }
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 30%;
+            }
+            to {
+                margin-left: 0%;
+                width: 30%;
+            }
+        }
+        main {
+            /* Ajusta el padding o margen según lo necesites */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flex-container">
+            <div id="logo"><img src="/img/logo.png" id="logo"></div>
+            <div id="reservas"><a href="/contenmido/Reservas.html">Reservas</a></div>
+        </div>
+        <div id="menu">
+            <nav>
+                <ul class="menu">
+                    <li><a href="/contenmido/Carta.html">MENUS</a></li>
+                    <li><a href="/index.html">INICIO</a></li>
+                    <li><a href="#">ALQUILER DEL LOCAL</a></li>
+                    <li><a href="#">GALERIA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Slider con dos imágenes -->
+        <div class="slide-container">
+            <div class="slide">
+                <img src="/img/carrusel1.jpg" alt="Imagen 1">
+                <div class="text">Bienvenido al restaurante del cisne blanco</div>
+            </div>
+            <div class="slide">
+                <img src="/img/carrusel2.jpg" alt="Imagen 2">
+                <div class="text">Bienvenido al restaurante del cisne blanco</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="flex-container">
+        <div id="logoPie"><img src="/img/logo.png"></div>
+        <div id="llamadas">
+            <h3>&#x1F4DE; LLAMANOS</h3><br> 
+            <p>+34 153246526</p>     <br> 
+            <h3>&#x1F4CD;  UBICACION</h3>   <br> 
+            <p>Calle la rioja</p> <br> 
+            <p>Calle la rioja</p> <br> 
+            <p>Córdoba</p><br>
+            <p>España</p>
+        </div>
+        <div id="lacay">
+            <h3>EL LACAY</h3><br> 
+            <p>Comida y bebida</p><br>
+            <p>Tarjetas de regalo</p><br>
+            <p>Comentario</p><br>
+            <p>Nuestros pubs hermanos</p><br>
+            <p>Alérgenos</p><br>
+        </div>
+        <div id="infoCliente">
+            <h3>INFORMACIÓN AL CLIENTE</h3><br> 
+            <p>Disfruta responsablemente</p><br>
+            <p>Unete a nuestro equipo</p><br>
+            <p>Preguntas de los medios</p><br>
+            <p>Contactenos</p><br>
+            <img src="/img/redes.png" alt="">
+            <p id="license" xmlns:cc="http://creativecommons.org/ns#">
+                Este trabajo tiene la licencia
+                <a id="licenseLink" href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=selecter-v1" target="_blank" rel="licencia noopener noreferrer">
+                    <img class="licenseImg" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="margin: 0%;">
+                    <img class="licenseImg" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="margin: 0%;">
+                    <img class="licenseImg" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" style="margin: 0%;">
+                    <img class="licenseImg" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="margin: 0%;">
+                </a>
+            </p>
+        </div>
+        <audio controls autoplay style="display: none;">
+            <source src="/Aud/ratatuyle.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let slides = document.getElementsByClassName("slide");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 10000); 
+            }
+        </script>
+    </footer>
+</body>
+</html>
